@@ -2,90 +2,67 @@
 
 module.exports =
   config:
-    patternList:
+    NewTextList:
       type: "array"
       default: [
-        "/[\\x20\\t]/g;",
-        "/[^A-Za-z0-9\\-]/g;",
+        "[%ST%](\#%FT%)",
+        "[%ST%](./fileOne.md\#%FT%)",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
       ]
       order: 0
-      title: "REGEX recipes to select what to change"
-      description: """
-      This pattern matches text to be replaced when the selected text "%ST%" is modified to become fixedText "%FT%"
-      The replacement text for each match is in replaceList below.
-      "/[\\x20\\t]/g;" selects all spaces and tabs to be replaced by the first item below, default "-"
-      "/[^A-Za-z0-9\\-]/g;" selects any character that is not a letter, number or dash "-" to be replaced by the second item below, default ""
-      """
-    replaceList:
-      type: "array"
-      default: [
-        "-",
-        "",
-      ]
-      order: 1
-      title: "REGEX replace text matched in patternList with this text."
-      description: """
-      Each match against patternList above is replaced with the same item number in this list.
-      """
-    newTextList:
-      type: "array"
-      default: [
-        "%ST%"
-        "%ST%"
-        "%ST%"
-        "%ST%"
-        "%ST%"
-        "%ST%"
-        "%ST%"
-        "%ST%"
-        "%ST%"
-        "%ST%"
-        "%ST%"
-        "%ST%"
-        "%ST%"
-        "%ST%"
-        "%ST%"
-        "%ST%"
-        "%ST%"
-        "%ST%"
-        "%ST%"
-        "%ST%"
-        "%ST%"
-        "%ST%"
-        "%ST%"
-        "%ST%"
-        "%ST%"
-        "%ST%"
-        "%ST%"
-        "%ST%"
-        "%ST%"
-        "%ST%"
-        "%ST%"
-        "%ST%"
-        "%ST%"
-        "%ST%"
-        "%ST%"
-        "%ST%"
-      ]
-      order: 2
       title: "Link text for wrap function"
       description: """
       "%ST%" will be replaced with the selected text unmodified.
       "%FT%" will be replaced by the text which has been processed through the regex in patternList and replacement in replaceList.
-      Select text to wrap in a link, alt-ctrl-m, alt-ctrl-0 to 9 two examples using the default values.
-        Select "Hello there!" alt-ctrl-m, alt-ctrl-0 will replace "Hello there!" with "\\[Hello there!\\]\\(#hello-there\\)"
-        Select "Hello there!" alt-ctrl-m, alt-ctrl-1 will replace "Hello there!" with "\\[Hello there!\\]\\(./CODES.md#hello-there\\)"
       """
-    lowerCaseFixedText:
+    LowerCaseFixedText:
+      type: "boolean"
+      default: true
+      order: 1
+      title: "Lowercase fixedText before inserting it."
+    UpperCaseSelectedText:
+      type: "boolean"
+      default: false
+      order: 2
+      title: "Uppercase selectedText before inserting it."
+    LinkifyFixedText:
       type: "boolean"
       default: true
       order: 3
-      title: "Lowercase fixedText before inserting it."
-    upperCaseSelectedText:
-      type: "boolean"
-      default: false
-      order: 4
-      title: "Uppercase selectedText before inserting it."
+      title: "Remove illegal characters and replace spaces with dashes for making HTML links"
 
   activate: (state) ->
     atom.commands.add "atom-workspace", "wrapperizer:wrap0", =>
@@ -314,20 +291,20 @@ wrapSelection = (editor, selection, wrapNum) ->
   selectedText = selection.getText()
   fixedText = selectedText
 
-  newTextList = atom.config.get("wrapperizer.newTextList")
-  patternList = atom.config.get("wrapperizer.patternList")
-  replaceList = atom.config.get("wrapperizer.replaceList")
-  lowerCaseFixedText = atom.config.get("wrapperizer.lowerCaseFixedText")
-  upperCaseSelectedText = atom.config.get("wrapperizer.upperCaseSelectedText")
+  NewTextList = atom.config.get("wrapperizer.NewTextList")
+  LowerCaseFixedText = atom.config.get("wrapperizer.LowerCaseFixedText")
+  UpperCaseSelectedText = atom.config.get("wrapperizer.UpperCaseSelectedText")
+  LinkifyFixedText = atom.config.get("wrapperizer.LinkifyFixedText")
 
-  for ii in [0 .. patternList.length]
-    fixedText = fixedText.replace(patternList[ii], replaceList[ii])
-  if lowerCaseFixedText == true
+  if LinkifyFixedText == true
+    fixedText = fixedText.replace(/[\s+\t+]/g, "-")
+    fixedText = fixedText.replace(/[^A-Za-z0-9\-]/g, "")
+  if LowerCaseFixedText == true
     fixedText = fixedText.toLowerCase()
-  if upperCaseSelectedText == true
+  if UpperCaseSelectedText == true
     selectedText = selectedText.toUpperCase()
 
-  newText = newTextList[wrapNum]
+  newText = NewTextList[wrapNum]
   newText = newText.replace("%ST%", selectedText)
   newText = newText.replace("%FT%", fixedText)
 

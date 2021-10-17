@@ -1,44 +1,18 @@
-# wrapperizer package
+# WRAPPERIZER PACKAGE
 
-  - This app started as a way to magically wrap local markdown file links including internal anchors.
-  - It has morphed into being configurable to just about any link style that has two parts, the displayed text, and the actual link.
-  - It works with [https://atom.io/packages/atomic-management](https://atom.io/packages/atomic-management) to allow per project configuration of all wrapperizer variables.
-    - patternList:
-      - "/[\\\\x20\\\\t]/g;"
-        - Selects all spaces and tabs to be replaced by the first item below, default "-"
-        - Note you need two backslashes "\\\\" in a pattern any place you need a backslash.
-      - "/[^A-Za-z0-9\\\\-]/g;" 
-        - Selects any character that is not a letter, number or dash "-" to be replaced by the second item below, default ""
-        - The leading ^ inside the pattern means not, select characters that do not match rather than selecting matching characters.
-    - replaceList:
-      - "-" 
-        - Replaces spaces "\\\\x20" and tabs "\\\\t" with "-" per markdown convention.
-      - "" 
-        - Replaces any not alphanumeric or "-" character with nothing.
+- Wraps selected text in arbitrary text.
+  - Makes .md and .html links
+    - LowerCaseFixedText when true lower cases the fixedText before replacing %FT% with it.
+    - UpperCaseSelectedText when true upper cases selectedText before replacing %ST% with it.
+    - LinkifyFixedText when true replaces spaces and tabs by dashes and removes all disallowed characters from fixedText before replacing %FT% with it.
     - newTextList:
       - "[%ST%](\#%FT%)"
         - Wrap a link in the current file.
       - "[%ST%](./fileOne.md\#%FT%)",
         - Wrap a link in fileOne.md in the local directory.
-      - "[%ST%](./fileTwo.md\#%FT%)",
-        - Wrap a link in fileTwo.md in the local directory.
-      - "[%ST%](./fileThree.md\#%FT%)",
-        - Wrap a link in fileThree.md in the local directory.
-      - "[%ST%](./fileFour.md\#%FT%)",
-        - Wrap a link in fileFour.md in the local directory.
-      - "[%ST%](./fileFive.md\#%FT%)",
-        - Wrap a link in fileFive.md in the local directory.
-      - "[%ST%](./fileSix.md\#%FT%)",
-        - Wrap a link in fileSix.md in the local directory.
-      - "[%ST%](./fileSeven.md\#%FT%)",
-        - Wrap a link in fileSeven.md in the local directory.
-      - "[%ST%](./fileEight.md\#%FT%)",
-        - Wrap a link in fileEight.md in the local directory.
-      - "[%ST%](./fileNine.md\#%FT%)",
-        - Wrap a link in fileNine.md in the local directory.
           - "%ST%" will be replaced with the selected text from the editor unmodified.
           - "%FT%" will be replaced by the text which has been processed through the regex in patternList and replacement in replaceList.
-          - Select text to wrap in a link in an editor buffer, alt-ctrl-m, alt-ctrl-0 to 9 two examples using the default values.
+          - Select text to wrap in a link in an editor buffer.
             - Select "Hello there!" alt-ctrl-w, 0 will replace "Hello there!" with "\\[Hello there!\\]\\(#hello-there\\)"
             - Select "Hello there!" alt-ctrl-w, 1 will replace "Hello there!" with "\\[Hello there!\\]\\(./fileOne.md#hello-there\\)"
 
