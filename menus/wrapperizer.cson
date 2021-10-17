@@ -3,67 +3,299 @@
   'atom-text-editor': [
     {
       'label': 'wrap0'
-      'command': 'LinkWrap:wrap0'
+      'command': 'wrapperizer:wrap0'
     },
     {
       'label': 'wrap1'
-      'command': 'LinkWrap:wrap1'
+      'command': 'wrapperizer:wrap1'
     },
     {
       'label': 'wrap2'
-      'command': 'LinkWrap:wrap2'
+      'command': 'wrapperizer:wrap2'
     },
     {
       'label': 'wrap3'
-      'command': 'LinkWrap:wrap3'
+      'command': 'wrapperizer:wrap3'
     },
     {
       'label': 'wrap4'
-      'command': 'LinkWrap:wrap4'
+      'command': 'wrapperizer:wrap4'
     },
     {
       'label': 'wrap5'
-      'command': 'LinkWrap:wrap5'
-    }
+      'command': 'wrapperizer:wrap5'
+    },
     {
       'label': 'wrap6'
-      'command': 'LinkWrap:wrap6'
-    }
+      'command': 'wrapperizer:wrap6'
+    },
+    {
+      'label': 'wrap7'
+      'command': 'wrapperizer:wrap7'
+    },
+    {
+      'label': 'wrap8'
+      'command': 'wrapperizer:wrap8'
+    },
+    {
+      'label': 'wrap9'
+      'command': 'wrapperizer:wrap9'
+    },
+    {
+      'label': 'wrapA'
+      'command': 'wrapperizer:wrapA'
+    },
+    {
+      'label': 'wrapB'
+      'command': 'wrapperizer:wrapB'
+    },
+    {
+      'label': 'wrapC'
+      'command': 'wrapperizer:wrapC'
+    },
+    {
+      'label': 'wrapD'
+      'command': 'wrapperizer:wrapD'
+    },
+    {
+      'label': 'wrapE'
+      'command': 'wrapperizer:wrapE'
+    },
+    {
+      'label': 'wrapF'
+      'command': 'wrapperizer:wrapF'
+    },
+    {
+      'label': 'wrapG'
+      'command': 'wrapperizer:wrapG'
+    },
+    {
+      'label': 'wrapH'
+      'command': 'wrapperizer:wrapH'
+    },
+    {
+      'label': 'wrapI'
+      'command': 'wrapperizer:wrapI'
+    },
+    {
+      'label': 'wrapJ'
+      'command': 'wrapperizer:wrapJ'
+    },
+    {
+      'label': 'wrapK'
+      'command': 'wrapperizer:wrapK'
+    },
+    {
+      'label': 'wrapL'
+      'command': 'wrapperizer:wrapL'
+    },
+    {
+      'label': 'wrapM'
+      'command': 'wrapperizer:wrapM'
+    },
+    {
+      'label': 'wrapN'
+      'command': 'wrapperizer:wrapN'
+    },
+    {
+      'label': 'wrapO'
+      'command': 'wrapperizer:wrapO'
+    },
+    {
+      'label': 'wrapP'
+      'command': 'wrapperizer:wrapP'
+    },
+    {
+      'label': 'wrapQ'
+      'command': 'wrapperizer:wrapQ'
+    },
+    {
+      'label': 'wrapR'
+      'command': 'wrapperizer:wrapR'
+    },
+    {
+      'label': 'wrapS'
+      'command': 'wrapperizer:wrapS'
+    },
+    {
+      'label': 'wrapT'
+      'command': 'wrapperizer:wrapT'
+    },
+    {
+      'label': 'wrapU'
+      'command': 'wrapperizer:wrapU'
+    },
+    {
+      'label': 'wrapV'
+      'command': 'wrapperizer:wrapV'
+    },
+    {
+      'label': 'wrapW'
+      'command': 'wrapperizer:wrapW'
+    },
+    {
+      'label': 'wrapX'
+      'command': 'wrapperizer:wrapX'
+    },
+    {
+      'label': 'wrapY'
+      'command': 'wrapperizer:wrapY'
+    },
+    {
+      'label': 'wrapZ'
+      'command': 'wrapperizer:wrapZ'
+    },
   ]
 'menu': [
   {
     'label': 'Packages'
     'submenu': [
-      'label': 'LinkWrap'
+      'label': 'wrapperizer'
       'submenu': [
         {
-          'label': 'Wrap #0'
-          'command': 'LinkWrap:wrap0'
-        }
+          'label': 'wrap0'
+          'command': 'wrapperizer:wrap0'
+        },
         {
-          'label': 'Wrap #1'
-          'command': 'LinkWrap:wrap1'
-        }
+          'label': 'wrap1'
+          'command': 'wrapperizer:wrap1'
+        },
         {
-          'label': 'Wrap #2'
-          'command': 'LinkWrap:wrap2'
-        }
+          'label': 'wrap2'
+          'command': 'wrapperizer:wrap2'
+        },
         {
-          'label': 'Wrap #3'
-          'command': 'LinkWrap:wrap3'
-        }
+          'label': 'wrap3'
+          'command': 'wrapperizer:wrap3'
+        },
         {
-          'label': 'Wrap #4'
-          'command': 'LinkWrap:wrap4'
-        }
+          'label': 'wrap4'
+          'command': 'wrapperizer:wrap4'
+        },
         {
-          'label': 'Wrap #5'
-          'command': 'LinkWrap:wrap5'
-        }
+          'label': 'wrap5'
+          'command': 'wrapperizer:wrap5'
+        },
         {
-          'label': 'Wrap #6'
-          'command': 'LinkWrap:wrap6'
-        }
+          'label': 'wrap6'
+          'command': 'wrapperizer:wrap6'
+        },
+        {
+          'label': 'wrap7'
+          'command': 'wrapperizer:wrap7'
+        },
+        {
+          'label': 'wrap8'
+          'command': 'wrapperizer:wrap8'
+        },
+        {
+          'label': 'wrap9'
+          'command': 'wrapperizer:wrap9'
+        },
+        {
+          'label': 'wrapA'
+          'command': 'wrapperizer:wrapA'
+        },
+        {
+          'label': 'wrapB'
+          'command': 'wrapperizer:wrapB'
+        },
+        {
+          'label': 'wrapC'
+          'command': 'wrapperizer:wrapC'
+        },
+        {
+          'label': 'wrapD'
+          'command': 'wrapperizer:wrapD'
+        },
+        {
+          'label': 'wrapE'
+          'command': 'wrapperizer:wrapE'
+        },
+        {
+          'label': 'wrapF'
+          'command': 'wrapperizer:wrapF'
+        },
+        {
+          'label': 'wrapG'
+          'command': 'wrapperizer:wrapG'
+        },
+        {
+          'label': 'wrapH'
+          'command': 'wrapperizer:wrapH'
+        },
+        {
+          'label': 'wrapI'
+          'command': 'wrapperizer:wrapI'
+        },
+        {
+          'label': 'wrapJ'
+          'command': 'wrapperizer:wrapJ'
+        },
+        {
+          'label': 'wrapK'
+          'command': 'wrapperizer:wrapK'
+        },
+        {
+          'label': 'wrapL'
+          'command': 'wrapperizer:wrapL'
+        },
+        {
+          'label': 'wrapM'
+          'command': 'wrapperizer:wrapM'
+        },
+        {
+          'label': 'wrapN'
+          'command': 'wrapperizer:wrapN'
+        },
+        {
+          'label': 'wrapO'
+          'command': 'wrapperizer:wrapO'
+        },
+        {
+          'label': 'wrapP'
+          'command': 'wrapperizer:wrapP'
+        },
+        {
+          'label': 'wrapQ'
+          'command': 'wrapperizer:wrapQ'
+        },
+        {
+          'label': 'wrapR'
+          'command': 'wrapperizer:wrapR'
+        },
+        {
+          'label': 'wrapS'
+          'command': 'wrapperizer:wrapS'
+        },
+        {
+          'label': 'wrapT'
+          'command': 'wrapperizer:wrapT'
+        },
+        {
+          'label': 'wrapU'
+          'command': 'wrapperizer:wrapU'
+        },
+        {
+          'label': 'wrapV'
+          'command': 'wrapperizer:wrapV'
+        },
+        {
+          'label': 'wrapW'
+          'command': 'wrapperizer:wrapW'
+        },
+        {
+          'label': 'wrapX'
+          'command': 'wrapperizer:wrapX'
+        },
+        {
+          'label': 'wrapY'
+          'command': 'wrapperizer:wrapY'
+        },
+        {
+          'label': 'wrapZ'
+          'command': 'wrapperizer:wrapZ'
+        },
       ]
     ]
   }

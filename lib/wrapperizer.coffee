@@ -2,6 +2,7 @@
 
 module.exports =
   config:
+
     patternList:
       type: "array"
       default: [
@@ -16,6 +17,7 @@ module.exports =
       "/[\\x20\\t]/g;" selects all spaces and tabs to be replaced by the first item below, default "-"
       "/[^A-Za-z0-9\\-]/g;" selects any character that is not a letter, number or dash "-" to be replaced by the second item below, default ""
       """
+
     replaceList:
       type: "array"
       default: [
@@ -27,45 +29,46 @@ module.exports =
       description: """
       Each match against patternList above is replaced with the same item number in this list.
       """
+
     newTextList:
       type: "array"
       default: [
-        "[%ST%](\#%FT%)", # 0
-        "[%ST%](./fileOne.md\#%FT%)",  # 1
-        "[%ST%](./fileTwo.md\#%FT%)",  # 2
-        "[%ST%](./fileThree.md\#%FT%)",  # 3
-        "[%ST%](./fileFour.md\#%FT%)",  # 4
-        "[%ST%](./fileFive.md\#%FT%)",  # 5
-        "[%ST%](./fileSix.md\#%FT%)",  # 6
-        "[%ST%](./fileSeven.md\#%FT%)",  # 7
-        "[%ST%](./fileEight.md\#%FT%)",  # 8
-        "[%ST%](./fileNine.md\#%FT%)",  # 9
-        "%ST%",  # A
-        "%ST%",  # B
-        "%ST%",  # C
-        "%ST%",  # D
-        "%ST%",  # E
-        "%ST%",  # F
-        "%ST%",  # G
-        "%ST%",  # H
-        "%ST%",  # I
-        "%ST%",  # J
-        "%ST%",  # K
-        "%ST%",  # L
-        "%ST%",  # M
-        "%ST%",  # N
-        "%ST%",  # O
-        "%ST%",  # P
-        "%ST%",  # Q
-        "%ST%",  # R
-        "%ST%",  # S
-        "%ST%",  # T
-        "%ST%",  # U
-        "%ST%",  # V
-        "%ST%",  # W
-        "%ST%",  # X
-        "%ST%",  # Y
-        "%ST%",  # Z
+        "[%ST%](\#%FT%)",
+        "[%ST%](./fileOne.md\#%FT%)",
+        "[%ST%](./fileTwo.md\#%FT%)",
+        "[%ST%](./fileThree.md\#%FT%)",
+        "[%ST%](./fileFour.md\#%FT%)",
+        "[%ST%](./fileFive.md\#%FT%)",
+        "[%ST%](./fileSix.md\#%FT%)",
+        "[%ST%](./fileSeven.md\#%FT%)",
+        "[%ST%](./fileEight.md\#%FT%)",
+        "[%ST%](./fileNine.md\#%FT%)",
+        "%ST%AA",
+        "%ST%BB",
+        "%ST%CC",
+        "%ST%DD",
+        "%ST%EE",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%"
       ]
       order: 2
       title: "Link text for wrap function"
@@ -76,13 +79,15 @@ module.exports =
         Select "Hello there!" alt-ctrl-m, alt-ctrl-0 will replace "Hello there!" with "\\[Hello there!\\]\\(#hello-there\\)"
         Select "Hello there!" alt-ctrl-m, alt-ctrl-1 will replace "Hello there!" with "\\[Hello there!\\]\\(./CODES.md#hello-there\\)"
       """
+
     lowerCaseFixedText:
-      type: "bool"
+      type: "boolean"
       default: true
       order: 3
       title: "Lowercase fixedText before inserting it."
+
     upperCaseSelectedText:
-      type: "bool"
+      type: "boolean"
       default: false
       order: 4
       title: "Uppercase selectedText before inserting it."
