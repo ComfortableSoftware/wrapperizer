@@ -1,0 +1,70 @@
+# See https://atom.io/docs/latest/hacking-atom-package-word-count#menus for more details
+'context-menu':
+  'atom-text-editor': [
+    {
+      'label': 'wrap0'
+      'command': 'LinkWrap:wrap0'
+    },
+    {
+      'label': 'wrap1'
+      'command': 'LinkWrap:wrap1'
+    },
+    {
+      'label': 'wrap2'
+      'command': 'LinkWrap:wrap2'
+    },
+    {
+      'label': 'wrap3'
+      'command': 'LinkWrap:wrap3'
+    },
+    {
+      'label': 'wrap4'
+      'command': 'LinkWrap:wrap4'
+    },
+    {
+      'label': 'wrap5'
+      'command': 'LinkWrap:wrap5'
+    }
+    {
+      'label': 'wrap6'
+      'command': 'LinkWrap:wrap6'
+    }
+  ]
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'LinkWrap'
+      'submenu': [
+        {
+          'label': 'Wrap #0'
+          'command': 'LinkWrap:wrap0'
+        }
+        {
+          'label': 'Wrap #1'
+          'command': 'LinkWrap:wrap1'
+        }
+        {
+          'label': 'Wrap #2'
+          'command': 'LinkWrap:wrap2'
+        }
+        {
+          'label': 'Wrap #3'
+          'command': 'LinkWrap:wrap3'
+        }
+        {
+          'label': 'Wrap #4'
+          'command': 'LinkWrap:wrap4'
+        }
+        {
+          'label': 'Wrap #5'
+          'command': 'LinkWrap:wrap5'
+        }
+        {
+          'label': 'Wrap #6'
+          'command': 'LinkWrap:wrap6'
+        }
+      ]
+    ]
+  }
+]
