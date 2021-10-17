@@ -2,7 +2,6 @@
 
 module.exports =
   config:
-
     patternList:
       type: "array"
       default: [
@@ -17,7 +16,6 @@ module.exports =
       "/[\\x20\\t]/g;" selects all spaces and tabs to be replaced by the first item below, default "-"
       "/[^A-Za-z0-9\\-]/g;" selects any character that is not a letter, number or dash "-" to be replaced by the second item below, default ""
       """
-
     replaceList:
       type: "array"
       default: [
@@ -29,7 +27,6 @@ module.exports =
       description: """
       Each match against patternList above is replaced with the same item number in this list.
       """
-
     newTextList:
       type: "array"
       default: [
@@ -43,11 +40,6 @@ module.exports =
         "[%ST%](./fileSeven.md\#%FT%)",
         "[%ST%](./fileEight.md\#%FT%)",
         "[%ST%](./fileNine.md\#%FT%)",
-        "%ST%AA",
-        "%ST%BB",
-        "%ST%CC",
-        "%ST%DD",
-        "%ST%EE",
         "%ST%",
         "%ST%",
         "%ST%",
@@ -68,7 +60,12 @@ module.exports =
         "%ST%",
         "%ST%",
         "%ST%",
-        "%ST%"
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
+        "%ST%",
       ]
       order: 2
       title: "Link text for wrap function"
@@ -79,13 +76,11 @@ module.exports =
         Select "Hello there!" alt-ctrl-m, alt-ctrl-0 will replace "Hello there!" with "\\[Hello there!\\]\\(#hello-there\\)"
         Select "Hello there!" alt-ctrl-m, alt-ctrl-1 will replace "Hello there!" with "\\[Hello there!\\]\\(./CODES.md#hello-there\\)"
       """
-
     lowerCaseFixedText:
       type: "boolean"
       default: true
       order: 3
       title: "Lowercase fixedText before inserting it."
-
     upperCaseSelectedText:
       type: "boolean"
       default: false
@@ -327,9 +322,9 @@ wrapSelection = (editor, selection, wrapNum) ->
 
   for ii in [0 .. patternList.length]
     fixedText = fixedText.replace(patternList[ii], replaceList[ii])
-  if lowerCaseFixedText = true
+  if lowerCaseFixedText == true
     fixedText = fixedText.toLowerCase()
-  if upperCaseSelectedText = true
+  if upperCaseSelectedText == true
     selectedText = selectedText.toUpperCase()
 
   newText = newTextList[wrapNum]

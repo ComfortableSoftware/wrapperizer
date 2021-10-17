@@ -43,4 +43,4 @@
             - Select "Hello there!" alt-ctrl-w, 1 will replace "Hello there!" with "\\[Hello there!\\]\\(./fileOne.md#hello-there\\)"
 
 
-  - ![A SCREENSHOTBB of your package](https://f.cloud.github.com/assets/69169/2290250/c35d867a-a017-11e3-86be-cd7c5bf3ff9b.gif)
+  - ![A screenshot of your package](https://f.cloud.github.com/assets/69169/2290250/c35d867a-a017-11e3-86be-cd7c5bf3ff9b.gif)
