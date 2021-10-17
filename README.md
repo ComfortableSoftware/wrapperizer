@@ -6,9 +6,9 @@
     - ###### UpperCaseSelectedText when true upper cases selectedText before replacing %ST% with it.
     - ###### LinkifyFixedText when true replaces spaces and tabs by dashes and removes all disallowed characters from fixedText before replacing %FT% with it.
     - ###### newTextList:
-      0. "[%ST%](\#%FT%)"
+      0. "\[%ST%\]\(\#%FT%\)"
         - Wrap a link in the current file.
-      1. "[%ST%](./fileOne.md\#%FT%)",
+      1. "\[%ST%\]\(./fileOne.md\#%FT%\)",
         - Wrap a link in fileOne.md in the local directory.
           - "%ST%" will be replaced with the selected text from the editor unmodified.
           - "%FT%" will be replaced by the text which has been processed through the regex in patternList and replacement in replaceList.
