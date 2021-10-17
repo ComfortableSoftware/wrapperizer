@@ -1,39 +1,39 @@
-MultiWrap = require '../lib/LinkWrap'
+MultiWrap = require '../lib/wrapperizer'
 
 # Use the command `window:run-package-specs` (cmd-alt-ctrl-p) to run specs.
 #
 # To run a specific `it` or `describe` block add an `f` to the front (e.g. `fit`
 # or `fdescribe`). Remove the `f` to unfocus the block.
 
-describe "MultiWrap", ->
+describe "wraperizer", ->
   [workspaceElement, activationPromise] = []
 
   beforeEach ->
     workspaceElement = atom.views.getView(atom.workspace)
-    activationPromise = atom.packages.activatePackage('LinkWrap')
+    activationPromise = atom.packages.activatePackage('wrapperizer')
 
-  describe "when the LinkWrap:toggle event is triggered", ->
+  describe "when the wrapperizer:toggle event is triggered", ->
     it "hides and shows the modal panel", ->
       # Before the activation event the view is not on the DOM, and no panel
       # has been created
-      expect(workspaceElement.querySelector('.LinkWrap')).not.toExist()
+      expect(workspaceElement.querySelector('.wrapperizer')).not.toExist()
 
       # This is an activation event, triggering it will cause the package to be
       # activated.
-      atom.commands.dispatch workspaceElement, 'LinkWrap:toggle'
+      atom.commands.dispatch workspaceElement, 'wrapperizer:toggle'
 
       waitsForPromise ->
         activationPromise
 
       runs ->
-        expect(workspaceElement.querySelector('.LinkWrap')).toExist()
+        expect(workspaceElement.querySelector('.wrapperizer')).toExist()
 
-        multiWrapElement = workspaceElement.querySelector('.LinkWrap')
+        multiWrapElement = workspaceElement.querySelector('.wrapperizer')
         expect(multiWrapElement).toExist()
 
         multiWrapPanel = atom.workspace.panelForItem(multiWrapElement)
         expect(multiWrapPanel.isVisible()).toBe true
-        atom.commands.dispatch workspaceElement, 'LinkWrap:toggle'
+        atom.commands.dispatch workspaceElement, 'wrapperizer:toggle'
         expect(multiWrapPanel.isVisible()).toBe false
 
     it "hides and shows the view", ->
@@ -45,18 +45,18 @@ describe "MultiWrap", ->
       # workspaceElement to the DOM are generally slower than those off DOM.
       jasmine.attachToDOM(workspaceElement)
 
-      expect(workspaceElement.querySelector('.LinkWrap')).not.toExist()
+      expect(workspaceElement.querySelector('.wrapperizer')).not.toExist()
 
       # This is an activation event, triggering it causes the package to be
       # activated.
-      atom.commands.dispatch workspaceElement, 'LinkWrap:toggle'
+      atom.commands.dispatch workspaceElement, 'wrapperizer:toggle'
 
       waitsForPromise ->
         activationPromise
 
       runs ->
         # Now we can test for view visibility
-        multiWrapElement = workspaceElement.querySelector('.LinkWrap')
+        multiWrapElement = workspaceElement.querySelector('.wrapperizer')
         expect(multiWrapElement).toBeVisible()
-        atom.commands.dispatch workspaceElement, 'LinkWrap:toggle'
+        atom.commands.dispatch workspaceElement, 'wrapperizer:toggle'
         expect(multiWrapElement).not.toBeVisible()
